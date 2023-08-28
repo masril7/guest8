@@ -1,0 +1,57 @@
+/* color */
+:root {
+    --c1: #ae9942;
+    --c2: #9d8420;
+    --c3: #7e6a1a;
+    --p1: #ffffff;
+    --p2: #f7f7f7;
+    --p3: #f0f0f0;
+    --m1: #b24e4c;
+    --m2: #a22c29;
+    --m3: #822321;
+    --abu: #9c9d9f;
+    --hitam: #07090f;
+}
+
+
+/* style sidebar */
+.sidebar {
+  position: absolute;
+  top: 0px;
+  left: -300px;
+  transition: 0.5s;
+}
+
+.sidebar-open {
+  top: 0px;
+  left: 0px;
+}
+
+nav {
+    /* padding: 60px 20px 60px 20px; */
+    width: 215px;  
+    height: 100vh;
+    background-color: var(--p1);
+    box-shadow: 25px 0px 100px 0px rgba(0, 0, 0, 0.05); 
+}
+
+.container-nav {
+    margin: 60px 20px;
+    width: 100vh;
+    height: 100vh;
+}
+
+.nav-item a, a {
+    text-decoration: none;
+    color: var(--hitam);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+
+/* content hp */
+.container-hp {
+    margin: auto;
+}
