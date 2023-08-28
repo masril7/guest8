@@ -1,0 +1,342 @@
+/* CSS RESET */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* Impor font */
+/* font poppins regular */
+@font-face {
+    font-family: P-R;
+    src: url(../Assets/Poppins/Poppins-Regular.ttf);
+}
+
+/* font poppins medium */
+@font-face {
+    font-family: P-M;
+    src: url(../Assets/Poppins/Poppins-Medium.ttf);
+}
+
+/* Dibawah ini style secara umum */
+body {
+    background-color: #293855;
+}
+
+.handphone {
+    box-sizing: border-box;
+
+    max-width: 444px;
+    height: 100%;
+
+    background-color: #293855;
+
+    margin: auto;
+}
+
+.handphone1 {
+    padding-top: 75px;
+    padding-bottom: 150px;
+}
+
+.handphone2 {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.handphone2-1 {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.h1-medium {
+    font-family: P-M;
+
+    color: #FFFFFF;
+
+    font-weight: 500;
+    font-size: 2rem;
+
+    text-align: center;
+    
+    line-height: 48px;
+}
+
+.h2-medium {
+    font-family: P-M;
+
+    color: #FFFFFF;
+
+    font-weight: 500;
+    font-size: 1.5rem;
+
+    text-align: center;
+
+    line-height: 36px;
+}
+
+.h3-medium {
+    font-family: P-M;
+
+    color: #FFFFFF;
+
+    font-weight: 500;
+    font-size: 1rem;
+
+    text-align: center;
+
+    line-height: 24px;
+}
+
+.h3-regular {
+    font-family: P-R;
+
+    color: #FFFFFF;
+
+    font-size: 1rem;
+
+    text-align: center;
+
+    line-height: 24px;
+}
+
+.h4-medium {
+    font-family: P-M;
+
+    color: #272727;
+
+    font-weight: 500;
+    font-size: 0.875rem;
+
+    text-align: left;
+
+    line-height: 21px;
+}
+
+.ilus-195 {
+    width: 195px;
+}
+
+.ilus-panah {
+    width: 12.38px;
+    height: 11.11px;
+}
+
+.button-type1 {
+    font-family: P-M;
+
+    background-color: #4265D6;
+    color: #FFFFFF;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 18px 28px 18px 28px;
+}
+
+.button-type2{
+    font-family: P-M;
+
+    text-decoration: underline;
+
+    background-color: #FFFFFF;
+    color: #4265D6;
+
+    border: none;
+}
+
+.button-type1 a.h3-medium {
+    font-family: P-M;
+    font-weight: 500;
+    font-size: 1rem;
+
+    text-decoration: none;
+
+    width: 100%;
+    height: 100%;
+}
+
+.box-form {
+    background-color: #FFFFFF;
+
+    box-sizing: border-box;
+    width: 340px;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    margin: auto;
+}
+
+.form {
+    width: 100%;
+
+    font-family: P-M;
+    font-size: 0.875rem;
+
+    background-color: #F0F0F0;
+    color: #272727;
+
+    border: none;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* Dibawah ini style secara khusus */
+
+/* File form.html */
+.handphone1 .h1-medium {
+    width: 312px;
+    height: 96px;
+
+    margin: 0px auto 100px auto;
+}
+
+.handphone1 .ilus-195 {
+    display: block;
+
+    width: 195px;
+    height: 219.27px;
+
+    margin: 0px auto 75px auto;
+}
+
+.handphone1 .h3-regular {
+    width: 315px;
+    height: 96px;
+
+    margin: 0px auto 75px auto;
+}
+
+.handphone1 a.button-type1 {
+    text-decoration: none;
+
+    position: relative;
+    left: 154px;
+}
+
+.handphone1 a.button-type1 p {
+    display: inline;
+}
+
+.handphone1 a.button-type1 img {
+    margin-left: 6px;
+}
+
+.handphone2 .h2-medium {
+    width: 312px;
+
+    margin: 0px auto 75px auto;
+}
+
+.handphone2 label {
+    display: block;
+
+    margin-bottom: 15px;
+}
+
+.handphone2 input.form {
+    height: 45px;
+
+    margin-bottom: 25px;
+}
+
+.handphone2 canvas.form {
+    height: 135px;
+}
+
+.handphone2 button.button-type2{
+    margin: 0;
+    padding: 0;
+
+    margin-bottom: 25px
+}
+
+.handphone2 button.button-type1 {
+    font-family: P-M;
+    font-weight: 500;
+    font-size: 1rem;
+
+    display: block;
+
+    position: relative;
+    left: 69.75px;
+}
+
+
+/* File terimakasih.html */
+.handphone2-1 .ucapan-makasih p {
+    margin: 0px auto 0px auto;
+}
+
+.handphone2-1 .ucapan-makasih {  
+    margin: auto auto 100px auto;
+}
+
+.handphone2-1 .ilus-195 {
+    display: block;
+
+    margin: auto auto 100px auto;
+}
+
+.handphone2-1 a.button-type1 {
+    text-decoration: none;
+
+    position: relative;
+    left: 112px;
+}
+
+.handphone2-1 a.button-type1 img {
+    margin-right: 6px;
+}
+
+.handphone2-1 a.button-type1 p {
+    display: inline;
+}

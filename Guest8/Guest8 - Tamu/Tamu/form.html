@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Comatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form - Buku Tamu</title>
+    <link rel="stylesheet" href="style-tamu.css">
+    <link rel="shortcut icon" href="../Assets/icon woi.svg">
+</head>
+<body>
+
+    <div class="handphone">
+
+        <div id="handphone2" class="handphone2">
+
+            <p class="h2-medium">Silahkan Untuk Mengisi Form Tamu Berikut</p>
+
+            <div class="box-form">
+                <form action="makasih.html" method="" onSubmit="return cek_kelengkapan_form();">
+
+                    <label style="display: none;" class="h4-medium" for="nik">Tanggal & Waktu</label>
+                    <div class="form" style="display: none; width: 100%; height: 45px; margin-bottom: 25px;"><p id="tanggalwaktu"></p></div>
+                    <!-- atau menggunakan ini -->
+                    <!-- <p>Tanggal/Waktu: DD.MM.YYYY hh:mm<br><?php echo date('j/m/Y H:i'); ?></p> -->
+
+                    <label class="h4-medium" for="nik">NIK</label>
+                    <input class="form" type="number" maxlength="12" name="NIK" id="nik" minlengt="12"><br>
+
+                    <label class="h4-medium" for="nama">Nama Lengkap</label>
+                    <input class="form" type="text" name="Nama" id="nama" required><br>
+
+                    <label class="h4-medium for="ins">Instansi</label>
+                    <input class="form" type="text" name="Email" id="ins" required><br>
+
+                    <label class="h4-medium for="alamat">Alamat Rumah</label>
+                    <input class="form" type="text" name="Alamat" id="alamat" required><br>
+
+                    <label class="h4-medium for="kep">Keperluan</label>
+                    <input class="form" type="text" name="Keperluan" id="kep" required><br>
+
+                    <label class="h4-medium for="tujuan">Tujuan</label>
+                    <input class="form" type="text" name="Tujuan" id="tujuan" required><br>
+
+                    <label class="h4-medium for="ttd">Tanda Tangan</label>
+                    <canvas class="form signature-pad" id="signature-pad" class="ttd"></canvas><br>
+                    <button type="button" class="btn btn-danger button-type2 display-i-b" id="clear">
+                        <span class="fas fa-eraser"></span>
+                        Hapus
+                    </button>
+
+                    <button type="submit" class="button-type1" type="submit">Kirim Data</button>
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+        <script>
+            // SCRIPT UNTUK MENAMPILKAN WAKTU
+            var dt = new Date();
+            document.getElementById("tanggalwaktu").innerHTML = dt.toLocaleString()
+
+            // SCRIPT UNTUK VALIDASI FORM
+            function cek_kelengkapan_form(){
+                var nomorIndukKependudukan = $("#nik").val();
+                var namaLengkap = $("#nama").val();
+                var alamatRumah = $("#alamat").val();
+                var keperluan = $("#kep").val();
+                var tujuanKePada = $("#tujuan").val();
+                var tandaTangan = $(".tdd").val();
+
+                if( nomorIndukKependudukan ==''){
+                    alert('NIK Wajib di Isi');
+                    return false;
+                }
+                if( namaLengkap ==''){
+                    alert('Nama Lengkap Wajib di Isi');
+                    return false;
+                }
+                if( alamatRumah ==''){
+                    alert('Alamat Rumah Wajib di Isi');
+                    return false;
+                }
+                if( keperluan ==''){
+                    alert('Keperluan Wajib di Isi');
+                    return false;
+                }
+                if( tujuanKePada ==''){
+                    alert('Tujuan Wajib di Isi');
+                    return false;
+                }
+                if( tandaTangan ==''){
+                    alert('Tanda Tangan Wajib di Isi');
+                    return false;
+                }
+            }
+
+
+            // SCRIPT UNTUK TANDA TANGAN
+            // script di dalam ini akan dijalankan pertama kali saat dokumen dimuat
+            document.addEventListener('DOMContentLoaded', function () {
+                resizeCanvas();
+            })
+    
+            //script ini berfungsi untuk menyesuaikan tanda tangan dengan ukuran canvas
+            function resizeCanvas() {
+                var ratio = Math.max(window.devicePixelRatio || 1, 1);
+                canvas.width = canvas.offsetWidth * ratio;
+                canvas.height = canvas.offsetHeight * ratio;
+                canvas.getContext("2d").scale(ratio, ratio);
+            }
+    
+    
+            var canvas = document.getElementById('signature-pad');
+    
+            //warna dasar signaturepad
+            var signaturePad = new SignaturePad(canvas, {
+                backgroundColor: 'rgb(240, 240, 240)'
+            });
+    
+            //saat tombol clear diklik maka akan menghilangkan seluruh tanda tangan
+            document.getElementById('clear').addEventListener('click', function () {
+                signaturePad.clear();
+            });
+    
+            //fungsi untuk menyimpan tanda tangan dengan metode ajax
+            $(document).on('click', '#btn-submit', function () {
+                var signature = signaturePad.toDataURL();
+    
+                $.ajax({
+                    url: "proses.php",
+                    data: {
+                        foto: signature,
+                    },
+                    method: "POST",
+                    success: function () {
+                        location.reload();
+                        alert('Tanda Tangan Berhasil Disimpan');
+                    }
+    
+                })
+            })
+        </script>
+</body>
+</html>
